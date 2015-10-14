@@ -1,9 +1,10 @@
 
-
+var isCopy = false;
 var urls =[];
 $('.dir-handler').each(function(){
 		var url = $(this).attr('href');
 		urls.push(url);
+		isCopy = true;
 });
 /*if(urls.lenght!=0){
 	urls.length =5;
@@ -20,11 +21,14 @@ function time()
   	timeout = false;
   	return ;
   }
-  setTimeout(time,10000); //time是指本身,延时递归调用自己,100为间隔调用时间,单位毫秒
+  setTimeout(time,30000); //time是指本身,延时递归调用自己,100为间隔调用时间,单位毫秒
 }
 
 time();
 
+if(!isCopy){
+	return;
+}
 
 console.log("保存文件");
 		console.log(window.yunData);

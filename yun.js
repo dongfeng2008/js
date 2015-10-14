@@ -1,3 +1,16 @@
+
+$urls = $('.dir-handler');
+if($urls.length!=0){
+	$('.dir-handler').each(function(){
+		var url = $(this).attr('href');
+		console.log(url);
+		window.open(url);
+	});
+}
+
+
+
+
 console.log("保存文件");
 		console.log(window.yunData);
     var sharePath = "["+"\""+window.yunData.PATH+"\""+"]";

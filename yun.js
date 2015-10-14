@@ -5,9 +5,9 @@ $('.dir-handler').each(function(){
 		var url = $(this).attr('href');
 		urls.push(url);
 });
-if(urls.lenght!=0){
+/*if(urls.lenght!=0){
 	urls.length =5;
-}
+}*/
 var timeout = false; //启动及关闭按钮
 function time()
 {

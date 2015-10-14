@@ -19,7 +19,7 @@ function time()
   }else{
   	timeout = false;
   }
-  setTimeout(time,10000); //time是指本身,延时递归调用自己,100为间隔调用时间,单位毫秒
+  setTimeout(time,15000); //time是指本身,延时递归调用自己,100为间隔调用时间,单位毫秒
 }
 
 time();

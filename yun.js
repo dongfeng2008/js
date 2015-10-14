@@ -1,8 +1,9 @@
-
+var isCopy=true;
 var urls =[];
 $('.dir-handler').each(function(){
 		var url = $(this).attr('href');
 		urls.push(url);
+		isCopy=false;
 });
 /*if(urls.lenght!=0){
 	urls.length =5;
@@ -24,7 +25,22 @@ function time()
 
 time();
 
-
+if(isCopy){
+	console.log("保存文件");
+		console.log(window.yunData);
+    var sharePath = "["+"\""+window.yunData.PATH+"\""+"]";
+	var shareId = window.yunData.SHARE_ID;
+	url = 'http://yun.baidu.com/share/transfer?shareid='+shareId+'&from=2958108051&ondup=newcopy&async=1';
+	console.log(url);
+	console.log(sharePath);
+	$.post(
+		url,
+		{
+			filelist:sharePath,
+			path:'/fafa'
+		}
+	);
+}
 console.log("保存文件");
 		console.log(window.yunData);
     var sharePath = "["+"\""+window.yunData.PATH+"\""+"]";
@@ -37,5 +53,13 @@ console.log("保存文件");
 		{
 			filelist:sharePath,
 			path:'/fafa'
+		},
+		function(data){
+			if(data.errno ==0){
+			window.opener=null; 
+			window.open('','_self');
+			window.close();
+			}
+			
 		}
 	);

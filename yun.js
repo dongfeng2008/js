@@ -1,10 +1,10 @@
 
-var isCopy = false;
+var isCopy = true;
 var urls =[];
 $('.dir-handler').each(function(){
 		var url = $(this).attr('href');
 		urls.push(url);
-		isCopy = true;
+		isCopy = false;
 });
 /*if(urls.lenght!=0){
 	urls.length =5;

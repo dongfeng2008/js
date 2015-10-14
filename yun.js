@@ -26,11 +26,8 @@ function time()
 
 time();
 
-if(!isCopy){
-	return;
-}
-
-console.log("保存文件");
+if(isCopy){
+	console.log("保存文件");
 		console.log(window.yunData);
     var sharePath = "["+"\""+window.yunData.PATH+"\""+"]";
 	var shareId = window.yunData.SHARE_ID;
@@ -44,3 +41,6 @@ console.log("保存文件");
 			path:'/fafa'
 		}
 	);
+
+}
+
